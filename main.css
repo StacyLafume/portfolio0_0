@@ -117,4 +117,105 @@ img:hover{
 	  margin-top: 1rem;
 	}
   }
+  /* ── 2.1 Base nav styles remain the same ───────────────────────────────── */
+.main-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	position: sticky;
+	top: 0;
+	background-color: white;
+	z-index: 1000;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
   
+  .main-nav .logo {
+	font-weight: bold;
+	font-size: 1.25rem;
+  }
+  
+  .nav-links {
+	list-style: none;
+	display: flex;
+	gap: 1.5rem;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .nav-links li a {
+	text-decoration: none;
+	color: #000;
+	font-weight: 500;
+  }
+  
+  /* ── 2.2 Hamburger (hidden on desktop) ───────────────────────────────── */
+  .hamburger {
+	display: none;      /* hide by default */
+	flex-direction: column;
+	cursor: pointer;
+  }
+  
+  .hamburger .bar {
+	height: 3px;
+	width: 25px;
+	background-color: #333;
+	margin: 4px 0;
+	transition: all 0.3s ease;
+  }
+  
+  /* ── 2.3 Mobile-specific tweaks (≤ 768px) ───────────────────────────────── */
+  @media (max-width: 768px) {
+
+	.main-nav {
+		flex-direction: row;         /* stay in a row */
+		justify-content: space-between; 
+		align-items: center;
+		padding: 1rem 2rem;          /* same padding as desktop (adjust as needed) */
+	  }
+  
+	/* Show hamburger */
+	.hamburger {
+	  display: flex;
+	}
+    /* ── Hide nav-links by default on mobile ───────────────────────────── */
+
+	.nav-links {
+		display: none;               /* keep links hidden under the bar */
+		flex-direction: column;      /* when shown, stack vertically */
+		width: 100%;
+		margin-top: 0.5rem;          /* space under the nav row */
+	  }
+  
+	.nav-links li {
+	  margin: 0.5rem 0;
+	}
+  
+	/* When .nav-links has .active, show it */
+	.nav-links.active {
+	  display: flex;
+	}
+  }
+  
+  /* ── 2.4 (Optional) Animate hamburger into an “X” when active ───────────────── */
+  .hamburger.active .bar:nth-child(1) {
+	transform: translateY(7px) rotate(45deg);
+  }
+  
+  .hamburger.active .bar:nth-child(2) {
+	opacity: 0;
+  }
+  
+  .hamburger.active .bar:nth-child(3) {
+	transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  html {
+	scroll-behavior: smooth;
+  }
+
+  #first,
+#projects,
+#contact {
+  scroll-margin-top: 70px; /* slightly larger than nav height */
+}
