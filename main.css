@@ -61,7 +61,7 @@ img{
 }
 img:hover{
 	/* -webkit-filter: grayscale(0); */
-  transform: scale(1.2,1.2);
+  transform: scale(1.2,1.2)!important;
 }
 
 @keyframes rotation{
@@ -72,6 +72,8 @@ img:hover{
 		transform: rotateY(360deg);
 	}
 }
+
+
 
 
 .main-nav {
@@ -219,3 +221,100 @@ img:hover{
 #contact {
   scroll-margin-top: 70px; /* slightly larger than nav height */
 }
+/* ── Two‐Column Banner Layout ───────────────────────────────────────── */
+
+/* 1) Make the parent a flex container, full viewport height */
+.banner-two-column {
+	display: flex;
+	flex-direction: row;
+	align-items: center;    /* vertically center both columns */
+	justify-content: space-between;
+	width: 100%;
+	height: 100vh;          /* full‐screen height */
+  }
+  
+  /* 2) Left column for text takes 50% of width (or adjust as needed) */
+  .banner-two-column .banner-content {
+	flex: 0 0 50%;          /* do not shrink, do not grow, exactly 50% */
+	padding: 2rem;          /* add breathing room around the text */
+	box-sizing: border-box;
+	z-index: 2;             /* ensures text sits above the image if overlapped */
+  }
+  
+  /* 3) Right column becomes the background image */
+  .banner-two-column .banner-image {
+	flex: 0 0 50%;          /* exactly 50% width */
+	height: 100%;           /* match parent’s 100vh */
+	background-image: url("/images/IMG_2172.jpg"); /* adjust this path if needed */
+	background-size: cover;        /* cover entire div */
+	background-position: center top; /* pin to top of image */
+	background-repeat: no-repeat;
+	position: relative;
+  }
+  
+  /* 4) Make banner-content text readable if needed (optional) */
+  .banner-two-column .banner-content h1 {
+	margin-bottom: 1rem;
+	font-size: 2.5rem;
+	line-height: 1.2;
+  }
+  
+  .banner-two-column .banner-content .major {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin-bottom: 2rem;
+  }
+  
+  /* 5) If you want a dark overlay behind text (optional) */
+  .banner-two-column .banner-image::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	/*background-color: rgba(0, 0, 0, 0.3);  30% black overlay */
+	z-index: 1;
+  }
+  
+  /* 6) Ensure text appears above that overlay */
+  .banner-two-column .banner-content {
+	position: relative;
+	z-index: 2;
+  }
+  
+  /* 7) Responsive adjustments: stack on mobile */
+  @media (max-width: 768px) {
+	.banner-two-column {
+	  flex-direction: column;
+	  height: auto;         /* let it grow based on content */
+	}
+	.banner-two-column .banner-content,
+	.banner-two-column .banner-image {
+	  flex: 0 0 auto;       /* allow both to size automatically */
+	  width: 100%;
+	}
+	.banner-two-column .banner-image {
+	  height: 300px;        /* a fixed “hero” height on mobile, adjust as needed */
+	}
+/* 2) Make both content and image full-width and cancel absolute positioning, then swap order */
+   .banner-two-column .banner-content,
+   .banner-two-column .banner-image {
+     flex: 0 0 auto !important;
+     width: 100% !important;
+     position: static !important;
+   }
+
+    /* Show image first on mobile */
+   .banner-two-column .banner-image {
+	     order: -1 !important;
+	   }
+
+	    /* 3) Give the image container a fixed height (it will now appear above text) */
+   .banner-two-column .banner-image {
+	     height: 300px !important;
+	     margin-top: 0 !important; /* no top margin since it’s first */
+	   }
+
+  }
+  
