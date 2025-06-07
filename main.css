@@ -470,12 +470,19 @@ img{
 
 #whitebutton li .button {
 border: 1px solid white ;
-
 color: white !important;
-
 }
 
 a{
-
 	text-decoration: none;
+}
+section{
+	border-width: 3px;
+	border-style: solid;
+	border-image: 
+    linear-gradient(
+      45deg,
+      #ff6a00, #ee0979, #ffc600
+    )1 1 100%;
+
 }
