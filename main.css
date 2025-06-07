@@ -1,222 +1,239 @@
 .image.particles {
-    height: inherit;
-    background-color: black;
+  height: inherit;
+  background-color: black;
 }
+
+
+
 
 @import url(https://fonts.googleapis.com/css?family=Anaheim);
 
-*{
+* {
   margin: 0;
   padding: 0;
   outline: none;
   border: none;
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 *:before,
-*:after{
-	box-sizing: border-box;
+*:after {
+  box-sizing: border-box;
 }
 
-
-.container1{
-	margin: 4% auto;
-	width: 210px;
-	height: 140px;
-	position: relative;
-	perspective: 1000px;
+.container1 {
+  margin: 4% auto;
+  width: 210px;
+  height: 140px;
+  position: relative;
+  perspective: 1000px;
 }
-#carousel{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	transform-style: preserve-3d;
-	animation: rotation 20s infinite linear;
+#carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotation 20s infinite linear;
 }
-#carousel:hover{
-	animation-play-state: paused;
+#carousel:hover {
+  animation-play-state: paused;
 }
-#carousel figure{
-	display: block;
-	position: absolute;
-	width: 80%;
-	left: 10px;
-	top: 10px;
+#carousel figure {
+  display: block;
+  position: absolute;
+  width: 80%;
+  left: 10px;
+  top: 10px;
 }
-#carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
-#carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
-#carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
-#carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
-#carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
-#carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
-#carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
-#carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
-#carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
-#carousel figure:nth-child(10) { transform: rotateY(360deg) translateZ(288px);}
-
-
-img{
-	/* -webkit-filter: grayscale(255); */
-	cursor: pointer;
-	transition: all .5s ease;
+#carousel figure:nth-child(1) {
+  transform: rotateY(0deg) translateZ(288px);
 }
-img:hover{
-	/* -webkit-filter: grayscale(0); */
-  transform: scale(1.2,1.2)!important;
+#carousel figure:nth-child(2) {
+  transform: rotateY(40deg) translateZ(288px);
+}
+#carousel figure:nth-child(3) {
+  transform: rotateY(80deg) translateZ(288px);
+}
+#carousel figure:nth-child(4) {
+  transform: rotateY(120deg) translateZ(288px);
+}
+#carousel figure:nth-child(5) {
+  transform: rotateY(160deg) translateZ(288px);
+}
+#carousel figure:nth-child(6) {
+  transform: rotateY(200deg) translateZ(288px);
+}
+#carousel figure:nth-child(7) {
+  transform: rotateY(240deg) translateZ(288px);
+}
+#carousel figure:nth-child(8) {
+  transform: rotateY(280deg) translateZ(288px);
+}
+#carousel figure:nth-child(9) {
+  transform: rotateY(320deg) translateZ(288px);
+}
+#carousel figure:nth-child(10) {
+  transform: rotateY(360deg) translateZ(288px);
 }
 
-@keyframes rotation{
-	from{
-		transform: rotateY(0deg);
-	}
-	to{
-		transform: rotateY(360deg);
-	}
+img {
+  /* -webkit-filter: grayscale(255); */
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+img:hover {
+  /* -webkit-filter: grayscale(0); */
+  transform: scale(1.2, 1.2) !important;
 }
 
-
-
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
 
 .main-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem 2rem;
-	position: sticky;
-	top: 0;
-	background-color: white;
-	z-index: 1000;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav .logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .main-nav .logo {
-	font-weight: bold;
-	font-size: 1.25rem;
-  }
-  
+
   .nav-links {
-	list-style: none;
-	display: flex;
-	gap: 1.5rem;
-	margin: 0;
-	padding: 0;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
   }
-  
-  .nav-links li a {
-	text-decoration: none;
-	color: #000;
-	font-weight: 500;
-  }
-  
-  @media (max-width: 768px) {
-	.main-nav {
-	  flex-direction: column;
-	  align-items: flex-start;
-	}
-  
-	.nav-links {
-	  flex-direction: column;
-	  width: 100%;
-	  margin-top: 1rem;
-	}
-  }
-  /* ── 2.1 Base nav styles remain the same ───────────────────────────────── */
+}
+/* ── 2.1 Base nav styles remain the same ───────────────────────────────── */
 .main-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem 2rem;
-	position: sticky;
-	top: 0;
-	background-color: white;
-	z-index: 1000;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav .logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+/* ── 2.2 Hamburger (hidden on desktop) ───────────────────────────────── */
+.hamburger {
+  display: none; /* hide by default */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 25px;
+  background-color: #333;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* ── 2.3 Mobile-specific tweaks (≤ 768px) ───────────────────────────────── */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: row; /* stay in a row */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem; /* same padding as desktop (adjust as needed) */
   }
-  
-  .main-nav .logo {
-	font-weight: bold;
-	font-size: 1.25rem;
-  }
-  
-  .nav-links {
-	list-style: none;
-	display: flex;
-	gap: 1.5rem;
-	margin: 0;
-	padding: 0;
-  }
-  
-  .nav-links li a {
-	text-decoration: none;
-	color: #000;
-	font-weight: 500;
-  }
-  
-  /* ── 2.2 Hamburger (hidden on desktop) ───────────────────────────────── */
+
+  /* Show hamburger */
   .hamburger {
-	display: none;      /* hide by default */
-	flex-direction: column;
-	cursor: pointer;
+    display: flex;
   }
-  
-  .hamburger .bar {
-	height: 3px;
-	width: 25px;
-	background-color: #333;
-	margin: 4px 0;
-	transition: all 0.3s ease;
-  }
-  
-  /* ── 2.3 Mobile-specific tweaks (≤ 768px) ───────────────────────────────── */
-  @media (max-width: 768px) {
+  /* ── Hide nav-links by default on mobile ───────────────────────────── */
 
-	.main-nav {
-		flex-direction: row;         /* stay in a row */
-		justify-content: space-between; 
-		align-items: center;
-		padding: 1rem 2rem;          /* same padding as desktop (adjust as needed) */
-	  }
-  
-	/* Show hamburger */
-	.hamburger {
-	  display: flex;
-	}
-    /* ── Hide nav-links by default on mobile ───────────────────────────── */
-
-	.nav-links {
-		display: none;               /* keep links hidden under the bar */
-		flex-direction: column;      /* when shown, stack vertically */
-		width: 100%;
-		margin-top: 0.5rem;          /* space under the nav row */
-	  }
-  
-	.nav-links li {
-	  margin: 0.5rem 0;
-	}
-  
-	/* When .nav-links has .active, show it */
-	.nav-links.active {
-	  display: flex;
-	}
-  }
-  
-  /* ── 2.4 (Optional) Animate hamburger into an “X” when active ───────────────── */
-  .hamburger.active .bar:nth-child(1) {
-	transform: translateY(7px) rotate(45deg);
-  }
-  
-  .hamburger.active .bar:nth-child(2) {
-	opacity: 0;
-  }
-  
-  .hamburger.active .bar:nth-child(3) {
-	transform: translateY(-7px) rotate(-45deg);
-  }
-  
-  html {
-	scroll-behavior: smooth;
+  .nav-links {
+    display: none; /* keep links hidden under the bar */
+    flex-direction: column; /* when shown, stack vertically */
+    width: 100%;
+    margin-top: 0.5rem; /* space under the nav row */
   }
 
-  #first,
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  /* When .nav-links has .active, show it */
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* ── 2.4 (Optional) Animate hamburger into an “X” when active ───────────────── */
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#first,
 #projects,
 #contact {
   scroll-margin-top: 70px; /* slightly larger than nav height */
@@ -225,96 +242,240 @@ img:hover{
 
 /* 1) Make the parent a flex container, full viewport height */
 .banner-two-column {
-	display: flex;
-	flex-direction: row;
-	align-items: center;    /* vertically center both columns */
-	justify-content: space-between;
-	width: 100%;
-	height: 100vh;          /* full‐screen height */
+  /* 1) Position parent so its ::before can fill it */
+  position: relative !important;
+  z-index: 0 !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* vertically center both columns */
+  justify-content: space-evenly  ;
+  width: 100%;
+  height: 100vh; /* full‐screen height */
+}
+
+
+
+/* ── 1) Vibrant animated gradient underlay ───────────────────── */
+.banner-two-column::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #ff6a00, #ee0979, #ffc600);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -2;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  /* 2) Left column for text takes 50% of width (or adjust as needed) */
-  .banner-two-column .banner-content {
-	flex: 0 0 50%;          /* do not shrink, do not grow, exactly 50% */
-	padding: 2rem;          /* add breathing room around the text */
-	box-sizing: border-box;
-	z-index: 2;             /* ensures text sits above the image if overlapped */
+  50% {
+    background-position: 100% 50%;
   }
-  
-  /* 3) Right column becomes the background image */
-  .banner-two-column .banner-image {
-	flex: 0 0 50%;          /* exactly 50% width */
-	height: 100%;           /* match parent’s 100vh */
-	background-image: url("/images/IMG_2172.jpg"); /* adjust this path if needed */
-	background-size: cover;        /* cover entire div */
-	background-position: center top; /* pin to top of image */
-	background-repeat: no-repeat;
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ── 2) Motivational typography ──────────────────────────────── */
+.banner-two-column .banner-content h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 6.5rem !important;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+.banner-two-column .banner-content .tagline {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* 2) Left column for text takes 50% of width (or adjust as needed) */
+.banner-two-column .banner-content {
+  flex: 0 0 50%; /* do not shrink, do not grow, exactly 50% */
+  padding: 2rem; /* add breathing room around the text */
+  box-sizing: border-box;
+  z-index: 2; /* ensures text sits above the image if overlapped */
+}
+
+/* 3) Right column becomes the background image */
+.banner-two-column .banner-image {
+  flex: 0 0 50%; /* exactly 50% width */
+  height: 100%; /* match parent’s 100vh */
+  background-image: url("/images/IMG_2172.jpg"); /* adjust this path if needed */
+  background-size: cover; /* cover entire div */
+  background-position: center top; /* pin to top of image */
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* 4) Make banner-content text readable if needed (optional) */
+.banner-two-column .banner-content h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.banner-two-column .banner-content .major {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+/* ── Dashed placeholder for your image ─────────────────────────── */
+.banner-two-column .banner-image {
+	flex: 0 0 45%;            /* adjust width as you like */
+	height: 70%;              /* leave some top & bottom gap */
 	position: relative;
   }
   
-  /* 4) Make banner-content text readable if needed (optional) */
-  .banner-two-column .banner-content h1 {
-	margin-bottom: 1rem;
-	font-size: 2.5rem;
-	line-height: 1.2;
+  .banner-two-column .banner-image.placeholder {
+	border: 5px dashed rgba(255, 255, 255, 0.726);
+	display: flex;
+	align-items: center;
+	justify-content: center;
   }
-  
-  .banner-two-column .banner-content .major {
-	font-size: 1.1rem;
-	line-height: 1.6;
-	margin-bottom: 2rem;
+
+
+/* 6) Ensure text appears above that overlay */
+.banner-two-column .banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* 7) Responsive adjustments: stack on mobile */
+@media (max-width: 768px) {
+  .banner-two-column {
+    flex-direction: column;
+    height: auto; /* let it grow based on content */
   }
-  
-  /* 5) If you want a dark overlay behind text (optional) */
-  .banner-two-column .banner-image::before {
-	content: "";
+  .banner-two-column .banner-content,
+  .banner-two-column .banner-image {
+    flex: 0 0 auto; /* allow both to size automatically */
+    width: 100%;
+  }
+  .banner-two-column .banner-image {
+    height: 300px; /* a fixed “hero” height on mobile, adjust as needed */
+  }
+  /* 2) Make both content and image full-width and cancel absolute positioning, then swap order */
+  .banner-two-column .banner-content,
+  .banner-two-column .banner-image {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    position: static !important;
+  }
+
+  /* Show image first on mobile */
+  .banner-two-column .banner-image {
+    order: -1 !important;
+  }
+
+  /* 3) Give the image container a fixed height (it will now appear above text) */
+  .banner-two-column .banner-image {
+    height: 300px !important;
+    margin-top: 0 !important; /* no top margin since it’s first */
+  }
+  .banner-two-column .shape-static,
+  .banner-two-column .shape-deco {
+    display: none;
+  }
+
+}
+/* static dashed circle */
+.banner-two-column .shape-static {
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	/*background-color: rgba(0, 0, 0, 0.3);  30% black overlay */
+	bottom: 25%;
+	right: 30%;
+	width: 180px;
+	height: 180px;
+	border: 3px dashed rgba(255,255,255,0.6);
+	border-radius: 50%;
+	pointer-events: none;
 	z-index: 1;
   }
-  
-  /* 6) Ensure text appears above that overlay */
-  .banner-two-column .banner-content {
-	position: relative;
+/*
+  ──
+  Floating
+  decorative
+  shape
+  ───────────────────────────────────
+  */
+  .banner-two-column .shape-deco {
+ 
+	position: absolute;        /* required for left/top to work */
+	top: 0;                    /* init at (0,0) */
+	left: 0;
+	width: 170px;             
+	height: 170px;
+	border: 3px solid rgba(255,255,255,0.7);
+	border-radius: 50%;
+	pointer-events: none;      /* let clicks pass through */
 	z-index: 2;
+	box-shadow: 0 0 20px rgba(255,255,255,0.9);
+	z-index: 1;
+	animation: floatShape 6s ease-in-out infinite;
+	transition: left 0.1s ease, top 0.1s ease;
+
+}
+
+/* .banner-two-column .shape-deco {
+	position: absolute;
+	bottom: 20%;
+	right: 10%;
+	width: 180px;
+	height: 180px;
+	border: 3px solid rgba(255,255,255,0.5);
+	border-radius: 50%;
+	box-shadow: 0 0 20px rgba(255,255,255,0.2);
+	z-index: 1;
+	animation: floatShape 6s ease-in-out infinite;
+  } */
+
+
+@keyframes floatShape {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
   }
-  
-  /* 7) Responsive adjustments: stack on mobile */
-  @media (max-width: 768px) {
-	.banner-two-column {
-	  flex-direction: column;
-	  height: auto;         /* let it grow based on content */
-	}
-	.banner-two-column .banner-content,
-	.banner-two-column .banner-image {
-	  flex: 0 0 auto;       /* allow both to size automatically */
-	  width: 100%;
-	}
-	.banner-two-column .banner-image {
-	  height: 300px;        /* a fixed “hero” height on mobile, adjust as needed */
-	}
-/* 2) Make both content and image full-width and cancel absolute positioning, then swap order */
-   .banner-two-column .banner-content,
-   .banner-two-column .banner-image {
-     flex: 0 0 auto !important;
-     width: 100% !important;
-     position: static !important;
-   }
-
-    /* Show image first on mobile */
-   .banner-two-column .banner-image {
-	     order: -1 !important;
-	   }
-
-	    /* 3) Give the image container a fixed height (it will now appear above text) */
-   .banner-two-column .banner-image {
-	     height: 300px !important;
-	     margin-top: 0 !important; /* no top margin since it’s first */
-	   }
-
+  50% {
+    transform: translateY(-20px) scale(1.1);
   }
+}
+
+img{
+
+    /* prevent dragging */
+	-webkit-user-drag: none;
+	user-drag: none;
   
+	/* prevent selection (text‐select menu won’t pop) */
+	user-select: none;
+  
+	/* on iOS Safari disable the “Save Image” touch menu */
+	-webkit-touch-callout: none;
+  
+	/* if you really don’t need clicks on it, block pointer events */
+	pointer-events: none;
+
+}
+
+#whitebutton li .button {
+border: 1px solid white ;
+
+color: white !important;
+
+}
+
+a{
+
+	text-decoration: none;
+}
