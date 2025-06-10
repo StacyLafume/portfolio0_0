@@ -3,9 +3,6 @@
   background-color: black;
 }
 
-
-
-
 @import url(https://fonts.googleapis.com/css?family=Anaheim);
 
 * {
@@ -248,12 +245,10 @@ html {
   display: flex;
   flex-direction: row;
   align-items: center; /* vertically center both columns */
-  justify-content: space-evenly  ;
+  justify-content: space-evenly;
   width: 100%;
   height: 100vh; /* full‐screen height */
 }
-
-
 
 /* ── 1) Vibrant animated gradient underlay ───────────────────── */
 .banner-two-column::before {
@@ -333,18 +328,17 @@ html {
 
 /* ── Dashed placeholder for your image ─────────────────────────── */
 .banner-two-column .banner-image {
-	flex: 0 0 45%;            /* adjust width as you like */
-	height: 70%;              /* leave some top & bottom gap */
-	position: relative;
-  }
-  
-  .banner-two-column .banner-image.placeholder {
-	border: 5px dashed rgba(255, 255, 255, 0.726);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-  }
+  flex: 0 0 45%; /* adjust width as you like */
+  height: 70%; /* leave some top & bottom gap */
+  position: relative;
+}
 
+.banner-two-column .banner-image.placeholder {
+  border: 5px dashed rgba(255, 255, 255, 0.726);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* 6) Ensure text appears above that overlay */
 .banner-two-column .banner-content {
@@ -388,20 +382,19 @@ html {
   .banner-two-column .shape-deco {
     display: none;
   }
-
 }
 /* static dashed circle */
 .banner-two-column .shape-static {
-	position: absolute;
-	bottom: 25%;
-	right: 30%;
-	width: 180px;
-	height: 180px;
-	border: 3px dashed rgba(255,255,255,0.6);
-	border-radius: 50%;
-	pointer-events: none;
-	z-index: 1;
-  }
+  position: absolute;
+  bottom: 25%;
+  right: 30%;
+  width: 180px;
+  height: 180px;
+  border: 3px dashed rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
 /*
   ──
   Floating
@@ -409,22 +402,20 @@ html {
   shape
   ───────────────────────────────────
   */
-  .banner-two-column .shape-deco {
- 
-	position: absolute;        /* required for left/top to work */
-	top: 0;                    /* init at (0,0) */
-	left: 0;
-	width: 170px;             
-	height: 170px;
-	border: 3px solid rgba(255,255,255,0.7);
-	border-radius: 50%;
-	pointer-events: none;      /* let clicks pass through */
-	z-index: 2;
-	box-shadow: 0 0 20px rgba(255,255,255,0.9);
-	z-index: 1;
-	animation: floatShape 6s ease-in-out infinite;
-	transition: left 0.1s ease, top 0.1s ease;
-
+.banner-two-column .shape-deco {
+  position: absolute; /* required for left/top to work */
+  top: 0; /* init at (0,0) */
+  left: 0;
+  width: 170px;
+  height: 170px;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  pointer-events: none; /* let clicks pass through */
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  animation: floatShape 6s ease-in-out infinite;
+  transition: left 0.1s ease, top 0.1s ease;
 }
 
 /* .banner-two-column .shape-deco {
@@ -440,7 +431,6 @@ html {
 	animation: floatShape 6s ease-in-out infinite;
   } */
 
-
 @keyframes floatShape {
   0%,
   100% {
@@ -451,38 +441,35 @@ html {
   }
 }
 
-img{
+img {
+  /* prevent dragging */
+  -webkit-user-drag: none;
+  user-drag: none;
 
-    /* prevent dragging */
-	-webkit-user-drag: none;
-	user-drag: none;
-  
-	/* prevent selection (text‐select menu won’t pop) */
-	user-select: none;
-  
-	/* on iOS Safari disable the “Save Image” touch menu */
-	-webkit-touch-callout: none;
-  
-	/* if you really don’t need clicks on it, block pointer events */
-	pointer-events: none;
+  /* prevent selection (text‐select menu won’t pop) */
+  user-select: none;
 
+  /* on iOS Safari disable the “Save Image” touch menu */
+  -webkit-touch-callout: none;
+
+  /* if you really don’t need clicks on it, block pointer events */
+  pointer-events: none;
 }
 
 #whitebutton li .button {
-border: 1px solid white ;
-color: white !important;
+  border: 1px solid white;
+  color: white !important;
 }
 
-a{
-	text-decoration: none;
+a {
+  text-decoration: none;
 }
-section{
-	border-width: 3px;
-	border-style: solid;
-	border-image: 
-    linear-gradient(
-      45deg,
-      #ff6a00, #ee0979, #ffc600
-    )1 1 100%;
-
+section {
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(45deg, #ff6a00, #ee0979, #ffc600) 1 1 100%;
+}
+video {
+  object-fit: cover;
+  overflow-clip-margin: content-box;
 }
