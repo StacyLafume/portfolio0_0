@@ -317,8 +317,8 @@ html {
 .banner-two-column .banner-image {
   flex: 0 0 50%; /* exactly 50% width */
   height: 100%; /* match parent’s 100vh */
-  background-image: url("/images/stacy.jpeg"); /* adjust this path if needed */
-  background-size: cover; /* cover entire div */
+  background-image: url("/images/stcyinacomputer.png"); /* adjust this path if needed */
+  background-size: 100%; /* cover entire div */
   background-position: center
   ; /* pin to top of image */
   background-repeat: no-repeat;
@@ -341,13 +341,13 @@ html {
 
 /* ── Dashed placeholder for your image ─────────────────────────── */
 .banner-two-column .banner-image {
-  flex: 0 0 45%; /* adjust width as you like */
+  flex: 0 0 65%; /* adjust width as you like */
   height: 70%; /* leave some top & bottom gap */
   position: relative;
 }
 
 .banner-two-column .banner-image.placeholder {
-  border: 5px dashed rgba(255, 255, 255, 0.726);
+  /* border: 5px dashed rgba(255, 255, 255, 0.726); */
   display: flex;
   align-items: center;
   justify-content: center anchor-center;
