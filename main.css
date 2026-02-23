@@ -1,3 +1,7 @@
+
+
+
+
 .image.particles {
   height: inherit;
   background-color: black;
@@ -277,8 +281,16 @@ html {
 }
 
 /* ── 2) Motivational typography ──────────────────────────────── */
+ @font-face {
+    font-family: 'Playlist Script';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Playlist Script'), url('/assets/playlist-cufonfonts-webfont/Playlist\ Script.woff') format('woff');
+  }
+
 .banner-two-column .banner-content h1 {
-  font-family: "Dancing Script", cursive;
+  font-family: "Playlist Script", cursive;
+  font-weight: lighter;
   font-size: 6.5rem !important;
   margin-bottom: 0.5rem;
   color: #fff;
@@ -305,9 +317,10 @@ html {
 .banner-two-column .banner-image {
   flex: 0 0 50%; /* exactly 50% width */
   height: 100%; /* match parent’s 100vh */
-  background-image: url("/images/IMG_2172.jpg"); /* adjust this path if needed */
+  background-image: url("/images/stacy.jpeg"); /* adjust this path if needed */
   background-size: cover; /* cover entire div */
-  background-position: center top; /* pin to top of image */
+  background-position: center
+  ; /* pin to top of image */
   background-repeat: no-repeat;
   position: relative;
 }
@@ -337,7 +350,7 @@ html {
   border: 5px dashed rgba(255, 255, 255, 0.726);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center anchor-center;
 }
 
 /* 6) Ensure text appears above that overlay */
@@ -465,7 +478,7 @@ a {
   text-decoration: none;
 }
 section {
-  border-width: 3px;
+  border-width: 3px 0px 3px 0px;
   border-style: solid;
   border-image: linear-gradient(45deg, #ff6a00, #ee0979, #ffc600) 1 1 100%;
 }
@@ -473,3 +486,4 @@ video {
   object-fit: cover;
   overflow-clip-margin: content-box;
 }
+ 
