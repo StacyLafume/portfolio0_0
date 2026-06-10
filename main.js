@@ -45,4 +45,22 @@ document.addEventListener("DOMContentLoaded", () => {
       console.warn("🎯 Banner or shape‑deco not found", banner, follower);
     }
   });
-  
+const logo = document.querySelector(".logo");
+const img = document.querySelector(".logo-img");
+
+logo.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // restart animation
+  img.classList.remove("logo-clicked");
+  void img.offsetWidth;
+  img.classList.add("logo-clicked");
+
+  // smooth scroll to home after animation starts
+  setTimeout(() => {
+    document.querySelector("#home")
+      ?.scrollIntoView({
+        behavior: "smooth"
+      });
+  }, 250);
+});
