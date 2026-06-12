@@ -64,3 +64,10 @@ logo.addEventListener("click", (e) => {
       });
   }, 250);
 });
+
+const carouselFigures = document.querySelectorAll("#carousel figure");
+
+carouselFigures.forEach((figure, index) => {
+  const angle = (360 / carouselFigures.length) * index;
+  figure.style.transform = `rotateY(${angle}deg) translateZ(500px)`;
+}); 
