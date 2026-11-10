@@ -154,6 +154,101 @@ body {
   background-color: black;
 }
 
+.project-image {
+  position: relative;
+  align-self: stretch;
+  isolation: isolate;
+  overflow: hidden;
+  background: #f7f4f5;
+}
+
+.project-image::before {
+  content: "";
+  position: absolute;
+  inset: -1rem;
+  z-index: 0;
+  background-position: center;
+  background-size: cover;
+  filter: blur(1.25rem);
+  transform: scale(1.05);
+}
+
+.production-docs::before {
+  background-image: url("images/ProductionDocs.png");
+}
+
+.nosa-image::before {
+  background-image: url("images/NOSApic.png");
+}
+
+.chroma-image::before {
+  background-image: url("images/chroma-consulting.png");
+}
+
+.carnival-image::before {
+  background-image: url("images/carnivalAI.png");
+}
+
+.justdraw-image::before {
+  background-image: url("images/justDraw2.png");
+}
+
+.particles::before {
+  background-image: url("images/particles.png");
+}
+
+#projects .spotlight.style1 .project-image > img,
+#projects .spotlight.style1 .project-image > video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+
+#projects .spotlight.style1 .project-image > img:hover {
+  transform: none !important;
+}
+
+.spotlight.style1.project-nosa .content,
+.spotlight.style1.project-nosa .image,
+.spotlight.style1.project-justdraw .content,
+.spotlight.style1.project-justdraw .image {
+  width: 50%;
+  min-width: 0;
+}
+
+.spotlight.style1.project-nosa .nosa-image,
+.spotlight.style1.project-justdraw .justdraw-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotlight.style1.project-nosa .nosa-image img,
+.spotlight.style1.project-justdraw .justdraw-image img {
+  max-height: 100%;
+}
+
+@media screen and (max-width: 736px) and (orientation: portrait) {
+  .spotlight.style1.project-nosa .content,
+  .spotlight.style1.project-nosa .image,
+  .spotlight.style1.project-justdraw .content,
+  .spotlight.style1.project-justdraw .image {
+    width: 100%;
+  }
+
+  .project-image {
+    align-self: stretch;
+    aspect-ratio: 16 / 9;
+  }
+
+}
+
 .image.production-docs {
    background-image: url('images/ProductionDocs.png');
   background-repeat: no-repeat;
@@ -345,67 +440,34 @@ img:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(34, 25, 31, 0.08);
 }
 
-.main-nav .logo img{
-   max-width: 20%;
-  max-height: 300px;
-  object-fit: contain;
-  border-radius: 20px;
-   overflow: hidden;
-}
-
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #000;
-  font-weight: 500;
-}
-
-@media (max-width: 768px) {
-  .main-nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-  }
-}
-/* ── 2.1 Base nav styles remain the same ───────────────────────────────── */
-.main-nav {
-  display: flex;
-  justify-content: space-between;
+.main-nav .logo {
+  display: inline-flex;
   align-items: center;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  background-color: white;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: center;
 }
 
-
+.main-nav .logo img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 16px;
+  overflow: hidden;
+}
 
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 1.5rem;
   margin: 0;
   padding: 0;
@@ -413,55 +475,98 @@ img:hover {
 
 .nav-links li a {
   text-decoration: none;
-  color: #000;
-  font-weight: 500;
+  color: #1f1d1d;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  transition: color 0.2s ease;
 }
 
-/* ── 2.2 Hamburger (hidden on desktop) ───────────────────────────────── */
+.nav-links li a:hover {
+  color: #704265;
+}
+
+.nav-links li a:focus-visible {
+  outline: 2px solid rgba(112, 66, 101, 0.45);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
 .hamburger {
-  display: none; /* hide by default */
+  display: none;
   flex-direction: column;
+  justify-content: center;
+  gap: 0.28rem;
+  width: 42px;
+  height: 42px;
   cursor: pointer;
+  border-radius: 10px;
+  background: rgba(112, 66, 101, 0.06);
+  padding: 0.6rem;
 }
 
 .hamburger .bar {
-  height: 3px;
-  width: 25px;
+  height: 2px;
+  width: 100%;
   background-color: #333;
-  margin: 4px 0;
+  border-radius: 999px;
   transition: all 0.3s ease;
 }
 
-/* ── 2.3 Mobile-specific tweaks (≤ 768px) ───────────────────────────────── */
 @media (max-width: 768px) {
   .main-nav {
-    flex-direction: row; /* stay in a row */
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem; /* same padding as desktop (adjust as needed) */
+    padding: 0.9rem 1.2rem;
   }
 
-  /* Show hamburger */
   .hamburger {
     display: flex;
   }
-  /* ── Hide nav-links by default on mobile ───────────────────────────── */
 
   .nav-links {
-    display: none; /* keep links hidden under the bar */
-    flex-direction: column; /* when shown, stack vertically */
-    width: 100%;
-    margin-top: 0.5rem; /* space under the nav row */
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 1rem;
+    right: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1rem 1.1rem;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(112, 66, 101, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 16px 30px rgba(34, 25, 31, 0.08);
   }
 
-  .nav-links li {
-    margin: 0.5rem 0;
-  }
-
-  /* When .nav-links has .active, show it */
   .nav-links.active {
     display: flex;
   }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 0.2rem 0;
+  }
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* ── 2.4 (Optional) Animate hamburger into an “X” when active ───────────────── */
@@ -538,14 +643,16 @@ html {
 .banner-two-column .banner-content h1 {
   font-family: "Playlist Script", cursive;
   font-weight: lighter;
-  font-size: 6.5rem !important;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
   margin-bottom: 0.5rem;
   color: #fff;
+  line-height: 0.9;
 }
+
 .banner-two-column .banner-content .tagline {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
@@ -554,10 +661,11 @@ html {
 
 /* 2) Left column for text takes 50% of width (or adjust as needed) */
 .banner-two-column .banner-content {
-  flex: 0 0 50%; /* do not shrink, do not grow, exactly 50% */
-  padding: 2rem; /* add breathing room around the text */
+  flex: 0 0 50%;
+  max-width: 640px;
+  padding: 2rem;
   box-sizing: border-box;
-  z-index: 2; /* ensures text sits above the image if overlapped */
+  z-index: 2;
 }
 
 /* 3) Right column becomes the background image */
@@ -573,11 +681,12 @@ html {
 
 }
 .banner-image img {
-  width:50%;
+  width: min(52%, 430px);
   height: auto;
   object-fit: contain;
   border-radius: 150px;
-   overflow: hidden;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(23, 16, 19, 0.2);
 }
 /* 4) Make banner-content text readable if needed (optional) */
 .banner-two-column .banner-content h1 {
@@ -587,10 +696,11 @@ html {
 }
 
 .banner-two-column .banner-content .major {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: clamp(1rem, 1.35vw, 1.22rem);
+  line-height: 1.65;
   margin-bottom: 2rem;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.94);
+  max-width: 560px;
 }
 
 b P {
@@ -600,16 +710,18 @@ b P {
 } 
 /* ── Dashed placeholder─────────────────────────── */
 .banner-two-column .banner-image {
-  flex: 0 0 65%; /* adjust width as you like */
-  height: 70%; /* leave some top & bottom gap */
+  flex: 0 0 65%;
+  height: 70%;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner-two-column .banner-image.placeholder {
-  /* border: 5px dashed rgba(255, 255, 255, 0.726); */
   display: flex;
   align-items: center;
-  justify-content: center anchor-center;
+  justify-content: center;
 }
 
 /* 6) Ensure text appears above that overlay */
@@ -622,34 +734,40 @@ b P {
 @media (max-width: 768px) {
   .banner-two-column {
     flex-direction: column;
-    height: auto; /* let it grow based on content */
+    justify-content: center;
+    gap: 1rem;
+    height: auto;
+    padding: 4rem 1.2rem 3rem;
   }
+
   .banner-two-column .banner-content,
   .banner-two-column .banner-image {
-    flex: 0 0 auto; /* allow both to size automatically */
-    width: 50% !important; /* full width on mobile */
-  }
-  .banner-two-column .banner-image {
-    height: 300px; /* a fixed “hero” height on mobile, adjust as needed */
-  }
-  /* 2) Make both content and image full-width and cancel absolute positioning, then swap order */
-  .banner-two-column .banner-content,
-  .banner-two-column .banner-image {
-    flex: 0 0 auto !important;
-    width: 50% !important;
+    flex: 0 0 auto;
+    width: 100% !important;
+    max-width: 100%;
     position: static !important;
   }
 
-  /* Show image first on mobile */
-  .banner-two-column .banner-image {
-    order: -1 !important;
+  .banner-two-column .banner-content {
+    padding: 0;
+    text-align: center;
   }
 
-  /* 3) Give the image container a fixed height (it will now appear above text) */
-  .banner-two-column .banner-image {
-    height: 300px !important;
-    margin-top: 0 !important; /* no top margin since it’s first */
+  .banner-two-column .banner-content .major {
+    max-width: 100%;
+    margin-bottom: 1.2rem;
   }
+
+  .banner-two-column .banner-image {
+    order: -1 !important;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .banner-image img {
+    width: min(72%, 320px);
+  }
+
   .banner-two-column .shape-static,
   .banner-two-column .shape-deco {
     display: none;
