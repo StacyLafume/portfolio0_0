@@ -573,7 +573,7 @@ html {
 
 }
 .banner-image img {
-  width:70%;
+  width:50%;
   height: auto;
   object-fit: contain;
   border-radius: 150px;
@@ -627,7 +627,7 @@ b P {
   .banner-two-column .banner-content,
   .banner-two-column .banner-image {
     flex: 0 0 auto; /* allow both to size automatically */
-    width: 100%;
+    width: 50% !important; /* full width on mobile */
   }
   .banner-two-column .banner-image {
     height: 300px; /* a fixed “hero” height on mobile, adjust as needed */
@@ -636,7 +636,7 @@ b P {
   .banner-two-column .banner-content,
   .banner-two-column .banner-image {
     flex: 0 0 auto !important;
-    width: 100% !important;
+    width: 50% !important;
     position: static !important;
   }
 
